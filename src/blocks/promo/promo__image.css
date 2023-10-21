@@ -1,0 +1,17 @@
+.promo__image {
+  display: block;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .promo__image {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .promo__image {
+    position: relative;
+    left: -200px;
+  }
+}

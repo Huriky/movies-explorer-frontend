@@ -1,0 +1,11 @@
+.promo {
+  background: #073042;
+  margin-top: -18px;
+  padding: 135px 0 60px;
+}
+
+@media screen and (max-width: 767px) {
+  .promo {
+    padding-top: 180px;
+  }
+}
