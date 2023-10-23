@@ -12,13 +12,13 @@ function Register() {
         <Link to="/"><img className="login__logo" src={logo} alt="Лого" /></Link>
         <h1 className="login__title">Добро пожаловать!</h1>
         <form className="login__form">
-          <label htmlFor="name" className="login__label">Имя</label>
+          <span className="login__label">Имя</span>
           <input name="name" type="text" className="login__input" placeholder="Имя" required />
-          <label htmlFor="email" className="login__label" >E-mail</label>
+          <span className="login__label" >E-mail</span>
           <input name="email" type="email" className="login__input" placeholder="E-mail" required />
-          <label htmlFor="password" className="login__label">Пароль</label>
+          <span className="login__label">Пароль</span>
           <input name="password" type="password" className="login__input" placeholder="Пароль" required />
-          <button type="submit" className="login__submit">Зарегистрироваться</button>
+          <button type="submit" className="login__submit" style={{marginTop: '150px'}}>Зарегистрироваться</button>
           <p className="login__text">Уже зарегистрированы? <Link to="/signin" className="login__link">Войти</Link></p>
         </form>
       </div>

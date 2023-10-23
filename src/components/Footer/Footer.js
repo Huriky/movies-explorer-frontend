@@ -9,8 +9,8 @@ function Footer() {
         <p className="footer__about">Учебный проект Яндекс.Практикум х BeatFilm.</p>
         <p className="footer__copyright">&copy; {time.getFullYear()}</p>
         <div className="footer__links">
-          <a href="https://practicum.yandex.ru/web/" className="footer__link">Яндекс.Практикум</a>
-          <a href="https://github.com/Huriky" className="footer__link">GitHub</a>
+          <a target={'_blank'} href="https://practicum.yandex.ru/web/" className="footer__link">Яндекс.Практикум</a>
+          <a target={'_blank'} href="https://github.com/Huriky" className="footer__link">GitHub</a>
         </div>
       </div>
     </footer>

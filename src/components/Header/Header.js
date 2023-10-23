@@ -7,16 +7,16 @@ function Header({ loggedIn }) {
   const location = useLocation();
 
   const elementLogin = (
-    <div className="heder__login-container">
+    <div className="header__login-container">
       <Link to="/signup" className="header__link">Регистрация</Link>
-      <Link to="/signin" className="heder__button">Войти</Link>
+      <Link to="/signin" className="header__button">Войти</Link>
     </div>
   );
 
   return (
     <header className={`${location.pathname === '/' ? "header_color_dark-green" : null} header`}>
       <div className="header__container">
-        <Link to="/" className="heder__logo"></Link>
+        <Link to="/" className="header__logo"></Link>
 
         {loggedIn ? (<Navigation />) : elementLogin}
       </div>

@@ -1,7 +1,8 @@
 .promo {
   background: #073042;
   margin-top: -18px;
-  padding: 135px 0 60px;
+  padding: 50px 0 60px;
+  overflow-x: hidden;
 }
 
 @media screen and (max-width: 767px) {

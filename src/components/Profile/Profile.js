@@ -8,11 +8,11 @@ function Profile() {
       <div className="profile__container">
         <h1 className="profile__title">{`Привет, Виталий!`}</h1>
         <div className="profile__item">
-          <label className="profile__label">Имя</label>
+          <span className="profile__label">Имя</span>
             <p className="profile__text">Виталий</p>
         </div>
         <div className="profile__item">
-          <label className="profile__label">E-mail</label>
+          <span className="profile__label">E-mail</span>
             <p className="profile__text">email@yandex.ru</p>
         </div>
       </div>

@@ -13,7 +13,7 @@ function AboutMe() {
             <p className="about-me__about">Я родился и живу в Саратове, закончил факультет экономики СГУ. У меня есть жена и дочь. Я люблю слушать музыку, а ещё увлекаюсь бегом. Недавно начал кодить. С 2015 года работал в компании «СКБ Контур». После того, как прошёл курс по веб-разработке, начал заниматься фриланс-заказами и ушёл с постоянной работы.</p>
           </article>
           <ul className="about-me__links">
-            <li><a href="https://github.com/Huriky" className="about-me__link">GitHub</a></li>
+            <li><a target={'_blank'} href="https://github.com/Huriky" className="about-me__link">GitHub</a></li>
           </ul>
           <img src={photoProfile} alt="Фото" className="about-me__image"></img>
         </div>

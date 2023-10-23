@@ -18,6 +18,8 @@
 
 .navigation__button_active {
   background-image: url(../../images/X.svg);
+  position: fixed;
+  right: 10px;
 }
 
 @media (min-width: 770px) {
