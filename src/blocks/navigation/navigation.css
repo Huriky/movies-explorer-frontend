@@ -1,4 +1,5 @@
-.navigation {
+
+.navigation__content {
 
   display: grid;
   grid-template-columns: 1fr max-content;
@@ -8,6 +9,11 @@
 
 @media (max-width: 770px) {
   .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .navigation__content {
     width: 67vw;
     height: 100%;
 
@@ -28,11 +34,11 @@
     background: #202020;
   }
 
-  .navigation_invisible {
+  .navigation__content_invisible {
     display: none;
   }
 
-  .navigation::after {
+  .navigation__content::after {
     content: '';
 
     width: 100%;
@@ -49,7 +55,7 @@
 }
 
 @media (max-width: 400px) {
-  .navigation {
+  .navigation__content {
     width: 100vw;
   }
 }

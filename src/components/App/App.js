@@ -18,7 +18,7 @@ import {useState} from "react";
 
 function App() {
   // eslint-disable-next-line
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
 
   return (
     <div className="root">

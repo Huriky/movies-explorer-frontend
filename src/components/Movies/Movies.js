@@ -6,10 +6,10 @@ import {SearchBar} from "../SearchBar/SearchBar";
 function Movies() {
 
     return (
-    <>
+    <main>
       <SearchBar />
       <MoviesCardList />
-    </>
+    </main>
   );
 }
 
