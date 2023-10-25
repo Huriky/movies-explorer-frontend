@@ -1,0 +1,12 @@
+.searchBar {
+  padding: 70px 0 80px;
+  margin-top: 75px;
+}
+@media screen and (max-width: 767px) {
+  .searchBar svg {
+    display: none;
+  }
+  .searchBar {
+    padding-bottom: 45px;
+  }
+}

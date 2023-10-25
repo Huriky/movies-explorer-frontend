@@ -1,0 +1,10 @@
+.card {
+  position: relative;
+}
+
+.card:hover .card__remove {
+  opacity: 1;
+}
+
+
+

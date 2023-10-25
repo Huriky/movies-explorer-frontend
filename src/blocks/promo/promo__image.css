@@ -1,0 +1,26 @@
+.promo__image {
+  display: block;
+  margin-left: auto;
+  width: 100%;
+  max-width: 680px;
+}
+
+.promo__image_mob {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .promo__image {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .promo__image {
+    display: none;
+  }
+  .promo__image_mob {
+    display: block;
+    width: 100%;
+  }
+}
