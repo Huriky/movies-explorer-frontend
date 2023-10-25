@@ -1,6 +1,6 @@
 .profile__title {
   margin: 0;
-  margin-bottom: 123px;
+  margin-bottom: 106px;
 
   font-style: normal;
   font-weight: 500;
@@ -12,7 +12,7 @@
 
 @media (max-width: 770px) {
   .profile__title {
-    margin-bottom: 96px;
+    margin-bottom: 81px;
   }
 }
 

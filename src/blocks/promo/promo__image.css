@@ -1,6 +1,12 @@
 .promo__image {
   display: block;
   margin-left: auto;
+  width: 100%;
+  max-width: 680px;
+}
+
+.promo__image_mob {
+  display: none;
 }
 
 @media screen and (max-width: 767px) {
@@ -11,7 +17,10 @@
 
 @media screen and (max-width: 400px) {
   .promo__image {
-    position: relative;
-    left: -200px;
+    display: none;
+  }
+  .promo__image_mob {
+    display: block;
+    width: 100%;
   }
 }

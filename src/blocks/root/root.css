@@ -3,9 +3,21 @@
   min-height: 100vh;
 
   background: #202020;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Arial', sans-serif;
   color: #FFFFFF;
 
   display: flex;
   flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+}
+
+a, button {
+  transition: .3s;
+}
+
+a:hover, button:hover {
+  opacity: 0.5;
 }

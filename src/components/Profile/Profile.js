@@ -1,8 +1,9 @@
 import './Profile.css';
-import main from "../Main/Main";
+import { useState } from 'react';
 
 function Profile() {
 
+  const [edit, setEdit] = useState(false)
 
   return (
     <main>
@@ -19,8 +20,21 @@ function Profile() {
           </div>
         </div>
         <div className="profile__menu">
-          <button type="button" className="profile__button">Редактировать</button>
-          <button type="button" className="profile__button profile__button_dangerous">Выйти из аккаунта</button>
+          {
+            edit ?
+              <button onClick={(e) => {
+                e.preventDefault()
+                setEdit(false)
+              }} className='profile__button_save'>Сохранить</button> :
+              <>
+                <button onClick={(e) => {
+                  e.preventDefault()
+                  setEdit(true)
+                }} type="button" className="profile__button">Редактировать</button>
+                <button type="button" className="profile__button profile__button_dangerous">Выйти из аккаунта</button>
+              </>
+          }
+
         </div>
       </form >
     </main>

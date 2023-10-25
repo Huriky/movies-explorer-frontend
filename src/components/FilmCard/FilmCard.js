@@ -11,7 +11,7 @@ export const FilmCard = () => {
 
   return (
     <div className={'card'}>
-      <img src={image} alt="" className={'card__image'}/>
+      <img src={image} alt="Фото карточки" className={'card__image'}/>
       <div className={'card__top'}>
         <p className={'card__title'}>33 слова о дизайне</p>
         {
