@@ -14,7 +14,6 @@ class Api {
       headers: {
         'Content-Type': 'application/json',
       },
-      credentials: 'include',
       body: JSON.stringify(data)
     })
       .then(this._handelResponse);
@@ -42,6 +41,10 @@ class Api {
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'GET',
       credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `${localStorage.getItem('token')}`,
+      }
     })
       .then(this._handelResponse);
   }
@@ -51,8 +54,8 @@ class Api {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': `${localStorage.getItem('token')}`
       },
-      credentials: 'include',
       body: JSON.stringify(data),
     })
       .then(this._handelResponse);
@@ -62,6 +65,10 @@ class Api {
     return fetch(`${this._baseUrl}/movies`, {
       method: 'GET',
       credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `${localStorage.getItem('token')}`,
+      }
     })
       .then(this._handelResponse);
   }
@@ -70,7 +77,8 @@ class Api {
     return fetch(`${this._baseUrl}/movies`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': `${localStorage.getItem('token')}`,
       },
       credentials: 'include',
       body: JSON.stringify(data)
@@ -82,7 +90,7 @@ class Api {
     return fetch(`${this._baseUrl}/movies/${id}`, {
       method: 'DELETE',
       headers: {
-        authorization: `Bearer ${this._token}`
+        authorization: `${localStorage.getItem('token')}`
       },
       credentials: 'include',
     })
@@ -91,6 +99,5 @@ class Api {
 }
 
 export const MainApi = new Api({
-  baseUrl: 'http://localhost:3000',
-  // baseUrl: 'https://api.kovalenko.diploma.nomoredomains.rocks'
+  baseUrl: 'https://api.moviyes.nomoredomainsrocks.ru'
 });
