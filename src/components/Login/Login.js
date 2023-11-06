@@ -57,7 +57,7 @@ function Login({ onSubmit }) {
             <span className="login__label" >Пароль</span>
             <input name="password" type="password" className="login__input" onChange={handleChange} required />
             <span className="login__error">{errors.password}</span>
-            <button className="login__submit">Войти</button>
+            <button disabled={!data.email || !data.password} className="login__submit">Войти</button>
             <p className="login__text">Ещё не зарегистрированы? <Link to="/signup" className="login__link">Регистрация</Link></p>
           </form>
         </div>

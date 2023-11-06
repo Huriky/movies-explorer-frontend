@@ -6,9 +6,12 @@ let step =  window.innerWidth > 1279 ? 16 :  window.innerWidth > 767 ? 8 : 5;
 
 function MoviesCardList({ cards, onDelete, onAdd }) {
 
-  console.log(cards)
   const [showCards, setShowCards] = useState(cards.slice(0, step))
   const [position, setPosition] = useState(step);
+
+  useEffect(() => {
+    setShowCards(cards.slice(0, step))
+  }, [cards])
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);

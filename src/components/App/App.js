@@ -20,7 +20,7 @@ import InfoPopup from "../InfoPopup/InfoPopup";
 
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(null);
   const [currentUser, setCurrentUser] = useState(null);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
@@ -69,7 +69,7 @@ function App() {
     MainApi.registration(data)
       .then(res => {
         if (res.ok) {
-          navigate('/signin')
+          handleLogin({email: data.email, password: data.password})
         }
         else {
           return Promise.reject(res.json());

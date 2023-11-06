@@ -36,24 +36,9 @@ function SavedMovies({ onError }) {
     localStorage.setItem('SearchHistory', JSON.stringify({data, params}));
   }
 
-  function getSavedMovies() {
-    setResults(null);
-    MainApi.getMovies()
-      .then((movies) => {
-        console.log(movies);
-        if (movies.movies.length) {
-          setResults(movies.movies);
-          setFilms(movies.movies)
-        }
-      })
-      .catch((err) => err.then(({ message }) => onError(message)));
-  }
 
-  function deleteMovie(id) {
-    MainApi.deleteMovie(id)
-      .then(() => getSavedMovies())
-      .catch((err) => err.then(({ message }) => onError(message)));
-  }
+
+
 
   function findInName(name, request) {
     if (!name || !request) return 0;
@@ -68,7 +53,7 @@ function SavedMovies({ onError }) {
 
   function handleSearch(params) {
     const { request, isShort } = params;
-
+    console.log(films)
     let data = films.filter(({ duration, nameRU, nameEN }) => {
 
       if (findInName(nameRU, request)) return true;
@@ -79,6 +64,25 @@ function SavedMovies({ onError }) {
     setFilms(data)
     changeIsShort(params, data);
 
+  }
+
+  function getSavedMovies() {
+    setResults(null);
+    MainApi.getMovies()
+      .then((movies) => {
+        if (movies.movies.length) {
+          setResults(movies.movies);
+            setFilms(movies.movies)
+        }
+      })
+  }
+
+  function deleteMovie(id) {
+    MainApi.deleteMovie(id)
+      .then(() => {
+        getSavedMovies()
+      })
+      .catch((err) => err.then(({ message }) => onError(message)));
   }
 
   return (

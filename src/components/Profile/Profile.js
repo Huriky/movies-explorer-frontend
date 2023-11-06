@@ -46,7 +46,7 @@ function Profile({ onSubmit, onOut }) {
         <div className="profile__menu">
           {
             edit ?
-              <button type={'submit'} className='profile__button_save' disabled={!(data.name !== currentUser.name || data.email !== currentUser.email)}>Сохранить</button> :
+              <button type={'submit'} className='profile__button_save' disabled={data.name === currentUser.user.name && data.email === currentUser.user.email}>Сохранить</button> :
               <>
                 <button onClick={(e) => {
                   e.preventDefault()

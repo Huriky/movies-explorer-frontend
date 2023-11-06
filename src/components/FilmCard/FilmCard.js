@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useLocation} from "react-router-dom";
 import image from '../../images/pic__COLOR_pic.png'
 import './FilmCard.css'
@@ -8,6 +8,10 @@ const baseUrl = 'https://api.nomoreparties.co';
 export const FilmCard = ({ movie, onDelete, onAdd }) => {
 
   const { nameRU, duration, image, isSaved, trailerLink } = movie;
+
+  useEffect(() => {
+    console.log(movie.isSaved)
+  }, [movie])
 
   function getDuration(duration) {
     const hours = Math.floor(duration / 60);

@@ -12,15 +12,18 @@ function Movies({ onError }) {
   const [films, setFilms] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [params, setParams] = useState(null);
+  const [defaultValue, setDeafultValue] = useState('')
 
   useEffect(() => {
   const SearchHistory = localStorage.getItem('SearchHistory');
   if (SearchHistory) {
     const savedSearch = JSON.parse(SearchHistory)
-    console.log(savedSearch)
+    console.log(savedSearch.params.request)
+    setDeafultValue(savedSearch.params.request)
     setParams(savedSearch.params);
     setFilms(savedSearch.data);
     changeIsShort(savedSearch.params, savedSearch.data);
+
   }
 }, [])
 
@@ -117,7 +120,14 @@ function addMovie(data) {
   MainApi.addMovie({ country, director, duration, year, description, image: `${baseUrl}${url}`, trailer: trailerLink, movieId, nameRU, nameEN, thumbnail: trailerLink })
     .then((movie) => {
       if (movie) {
-        checkSaved(results, params)
+        setResults([...results.map(item => {
+          if(item.id === movie.movie.movieId) {
+            console.log(movie.movie)
+            return {...item, isSaved: true, savedId: movie.movie._id}
+          } 
+          return item
+        })])
+        // checkSaved(results, params)
       }
     })
     .catch((err) => err.then(({ message }) => onError(message)))
@@ -135,7 +145,7 @@ function deleteMovie(id) {
 
     return (
     <main>
-      <SearchBar onSubmit={handleSearch} onChecked={changeIsShort} />
+      <SearchBar defaultValue={params?.request} onSubmit={handleSearch} onChecked={changeIsShort} />
       {isLoading ? (<Preloader />) : null}
       {results && !isLoading ? (<MoviesCardList cards={results} onDelete={deleteMovie} onAdd={addMovie} />) : null}
     </main>
