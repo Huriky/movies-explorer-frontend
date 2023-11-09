@@ -18,13 +18,13 @@ function SavedMovies({ onError }) {
 
   function changeIsShort(params, Films = films) {
     setIsLoading(true)
-    setResults(null);
     if (Films) {
       const { isShort = false } = params;
       const data = Films.filter(({ duration }) => {
         if (isShort && duration > 40) return false;
         return true;
       });
+      setResults(null);
       setResults(data)
     }
     setTimeout(() => setIsLoading(false), 500)
@@ -80,7 +80,8 @@ function SavedMovies({ onError }) {
   function deleteMovie(id) {
     MainApi.deleteMovie(id)
       .then(() => {
-        getSavedMovies()
+        setResults(results.filter(item => item._id !== id))
+        setFilms(films.filter(item => item._id !== id))
       })
       .catch((err) => err.then(({ message }) => onError(message)));
   }

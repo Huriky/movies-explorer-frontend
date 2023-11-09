@@ -9,10 +9,6 @@ export const FilmCard = ({ movie, onDelete, onAdd }) => {
 
   const { nameRU, duration, image, isSaved, trailerLink } = movie;
 
-  useEffect(() => {
-    console.log(movie.isSaved)
-  }, [movie])
-
   function getDuration(duration) {
     const hours = Math.floor(duration / 60);
     const minutes = duration % 60;

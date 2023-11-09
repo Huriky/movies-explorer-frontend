@@ -69,7 +69,7 @@ function Register({ onSubmit }) {
             <span className="login__label">Пароль</span>
             <input name="password" type="password" className="login__input" onChange={handleChange} required />
             <span className="login__error">{errors.password}</span>
-            <button disabled={!data.email || !data.password || !data.name} type="submit" className="login__submit" style={{marginTop: '150px'}}>Зарегистрироваться</button>
+            <button disabled={!data.email || !data.password || !data.name || !isValid.name || !isValid.email || !isValid.password} type="submit" className="login__submit" style={{marginTop: '150px'}}>Зарегистрироваться</button>
             <p className="login__text">Уже зарегистрированы? <Link to="/signin" className="login__link">Войти</Link></p>
           </form>
         </div>

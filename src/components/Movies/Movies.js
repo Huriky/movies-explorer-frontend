@@ -122,7 +122,6 @@ function addMovie(data) {
       if (movie) {
         setResults([...results.map(item => {
           if(item.id === movie.movie.movieId) {
-            console.log(movie.movie)
             return {...item, isSaved: true, savedId: movie.movie._id}
           } 
           return item
@@ -137,7 +136,13 @@ function deleteMovie(id) {
   MainApi.deleteMovie(id)
     .then((movie) => {
       if (movie) {
-        checkSaved(results, params)
+        setResults(results.map(item => {
+          return {
+            ...item,
+            isSaved: id === item.savedId ? false : item.isSaved,
+            savedId: ''
+          }
+        }))
       }
     })
     .catch((err) => err.then(({ message }) => onError(message)))
