@@ -1,0 +1,19 @@
+.card__remove {
+  cursor: pointer;
+  border: none;
+  border-radius: 100%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #313131;
+  transition: .3s;
+  opacity: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .card__remove {
+    opacity: 1;
+  }
+}

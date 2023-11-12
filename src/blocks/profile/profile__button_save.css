@@ -1,0 +1,20 @@
+.profile__button_save {
+    width: 100%;
+    padding: 13px;
+    border-radius: 3px;
+    background: #3456F3;
+    max-width: 410px;
+    margin: 0 auto;
+    border: none;
+    color: #FFF;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.profile__button_save:disabled {
+    opacity: 0.5;
+    cursor: default;
+}

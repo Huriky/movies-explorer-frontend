@@ -1,0 +1,25 @@
+.searchbar__filter {
+  padding-left: 30px;
+  border-left: 1px solid #424242;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.searchbar__filter.mob {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .searchbar__filter {
+    display: none;
+  }
+  .searchbar__filter.mob {
+    display: flex;
+    border-left: none;
+    padding-left: 0;
+    margin: 0 auto;
+    width: fit-content;
+  }
+  .searchbar__filter.mob svg {
+    display: block;
+  }
+}

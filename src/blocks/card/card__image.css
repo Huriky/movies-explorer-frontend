@@ -1,0 +1,11 @@
+.card__image {
+  margin-bottom: 14px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+@media screen and (max-width: 1279px) {
+  .card__image {
+  }
+}
+
